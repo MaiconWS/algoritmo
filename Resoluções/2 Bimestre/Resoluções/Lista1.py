@@ -1,5 +1,4 @@
 # Lista de Exercícios - Menu Interativo
-#atualizar
 def exibir_menu():
    print("""
    MENU:
@@ -18,8 +17,8 @@ def exibir_menu():
    """)
 
 def area():
-    comprimento = 5
-    largura = 3
+    comprimento = int(input("Informe o comprimento do retângulo: "))
+    largura = int(input("Informe a largura do retângulo: "))
 
     area = comprimento*largura
 
@@ -63,23 +62,61 @@ def NumPar():
         print("É impar")
 
 def delta():
-    print("delta")
+    a = int(input("Informe o valor de A: "))
+    b = int(input("Informe o valor de B: "))
+    c = int(input("Informe o valor de C: "))
     
-    
+    delta = (b**2) - 4*a*c
+    print(f"O valor de delta é {delta}")
     
 def comparacao():
-    print("")
+    num1 = int(input("Informe o primeiro número: "))
+    num2 = int(input("Informe o segundo número: "))
+    diferenca = abs(num1 - num2)
+    
+    if num1 > num2:
+        print(f"pois {num1} > {num2} e a diferença é {diferenca}, que é > {num2}")
+    elif num2 > num1:
+        print(f"pois {num2} > {num1} e a diferença é {diferenca}, que é > {num1}")
+    else:
+        print("Os números são iguais.")
     
     
 def salario():
-    print("")
+    salarioBruto = float(input("Informe o salário bruto: "))
+    numDependentes = int(input("Informe o número de dependentes: "))
+    
+    if salarioBruto <= 1000:
+        descontoINSS = salarioBruto * 0.08
+    elif salarioBruto <= 2000:
+        descontoINSS = salarioBruto * 0.09
+    else:
+        descontoINSS = salarioBruto * 0.11
+    
+    descontoDependentes = numDependentes * 50
+    salarioLiquido = salarioBruto - descontoINSS - descontoDependentes
+    
+    print(f"O salário líquido é: R$ {salarioLiquido:.2f}")
     
     
 def triangulo():
-    print("")
+    lado1 = float(input("Informe o comprimento do primeiro lado: "))
+    lado2 = float(input("Informe o comprimento do segundo lado: "))
+    lado3 = float(input("Informe o comprimento do terceiro lado: "))
+    
+    if (lado1 < lado2 + lado3) and (lado2 < lado1 + lado3) and (lado3 < lado1 + lado2):
+        print("Os lados formam um triângulo.")
+    else:
+        print("Os lados não formam um triângulo.")
     
 def Equivalente():
-    print("")
+    resistencia1 = float(input("Informe o valor da primeira resistência (em ohms): "))
+    resistencia2 = float(input("Informe o valor da segunda resistência (em ohms): "))
+    resistencia3 = float(input("Informe o valor da terceira resistência (em ohms): "))
+    
+    resistencia_equivalente = 1 / ((1/resistencia1) + (1/resistencia2) + (1/resistencia3))
+    
+    print(f"A resistência equivalente é: {resistencia_equivalente:.2f} ohms")
     
 
 def main():
